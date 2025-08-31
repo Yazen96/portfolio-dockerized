@@ -68,7 +68,7 @@ The application runs as expected via Docker:
 ## 📌 Versioning
 
 * **Version 1**: [Backend](https://github.com/Yazen96/WU.netapi-labb3), [Frontend](https://github.com/Yazen96/Blazorapp-portfolio-lab3-WU)
-* **Version 2 (Dockerized)**: [New Repo](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME)
+* **Version 2 (Dockerized)**: [portfolio-dockerized](https://github.com/Yazen96/portfolio-dockerized.git)
 
 ```
 
