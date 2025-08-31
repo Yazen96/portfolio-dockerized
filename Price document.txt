@@ -1,0 +1,36 @@
+Del 2 – Teori
+
+Pris- och kapacitetsjämförelse: Containers vs. Virtuella Maskiner (VM)
+
+För att drifta min webbapplikation jämförde jag två alternativ på Azure:
+
+- Containerlösning (Azure Container Instances eller Azure Container Apps)
+  Betalning sker per sekund för CPU och RAM, vilket gör det mer kostnadseffektivt och skalbart för små till medelstora applikationer.
+
+- Virtuell maskin (Azure VM Standard_D4_v3)
+  Specifikation: 4 vCPU och 16 GB RAM
+  Pris: ca 0.192 USD/timme ≈ 140 USD/månad
+
+| Plattform     | Fördelar                                                                 | Nackdelar                                        |
+|---------------|--------------------------------------------------------------------------|--------------------------------------------------|
+| Containers    | Lättviktiga, snabb starttid, portabla, effektiv resursanvändning         | Mindre isolering, beroende av orkestrering       |
+| VMs           | Stark isolering, bättre för äldre eller komplexa system                  | Högre kostnad, längre uppstartstid, underhåll     |
+
+Slutsats: Containers är mest lämpade för moderna webbapplikationer tack vare snabbhet, portabilitet och lägre driftkostnad.
+
+Lagring – Kostnadsjämförelse
+
+Scenario:
+- Databasen innehåller upp till 25 GB data.
+- Den ska vara ”Het” i 2 veckor och därefter arkiveras i 6 månader.
+
+Azure Blob Storage – Prisuppskattning:
+
+| Lagringstyp | Pris per GB/månad | Period      | Kostnad             |
+|-------------|--------------------|-------------|----------------------|
+| Hot         | $0.018             | 0.5 månad   | 25 GB × 0.018 × 0.5 = $0.22 |
+| Archive     | $0.002             | 6 månader   | 25 GB × 0.002 × 6 = $0.30   |
+
+Total lagringskostnad för 6.5 månader: ≈ $0.52
+
+Kommentar: Arkivering i Archive Tier efter två veckor ger en mycket låg kostnad. Eftersom datan inte behöver användas aktivt efter två veckor, är detta en effektiv lösning.
